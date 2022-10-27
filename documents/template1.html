@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template 1</title>
+  </head>
+  <style>
+    body {
+      padding: 5px 40px;
+    }
+
+    .name {
+      text-align: center;
+      margin: 0px;
+      padding: 0%;
+      color: rgb(31 56 100);
+    }
+
+    .personal-details {
+      text-align: center;
+      margin: 0px;
+      padding: 0%;
+      font-weight: 200;
+      font-style: italic;
+      font-size: 0.75rem;
+    }
+
+    .heading-1 {
+      color: #2e75b5;
+      margin: 8px 5px;
+      margin-bottom: 2px;
+      padding: 0%;
+    }
+
+    .name-date-box {
+      display: flex;
+      justify-content: space-between;
+      margin: 5px 0px;
+      padding: 0%;
+      display: -webkit-flex;
+      -webkit-justify-content: space-between;
+      /* -webkit-align-items: center; */
+    }
+
+    .sub-heading-1 {
+      margin: 0px 3px;
+      padding: 0%;
+      font-weight: 700;
+    }
+
+    .sub-heading-2 {
+      margin: 0px 3px;
+      padding: 0%;
+      font-weight: 400;
+      font-size: 0.83rem;
+      font-style: italic;
+    }
+
+    .text {
+      font-size: small;
+      margin: 0px;
+      padding: 0%;
+    }
+
+    .skills-box {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    ul {
+      padding: 0px;
+      padding-left: 19px;
+      margin: 0px;
+    }
+  </style>
+
+  <body>
+    <h1 class="name">Prasanna Gramopadhye</h1>
+    <h4 class="personal-details">
+      gramopadhye37@gmail.com | +91-7875594848 | github.com/gramo37 |
+      prasanna-gramopadhye.com
+    </h4>
+    <h3 class="heading-1">Education</h3>
+    <hr style="margin: 0px" />
+    <div class="educational-details">
+      <div>
+        <div class="name-date-box">
+          <h5 class="sub-heading-1">
+            Pune Vidyarthi Griha’s College Of Engineering And Technology
+            (PVGCOET), India
+          </h5>
+          <h5 class="sub-heading-1">2017 - 2021</h5>
+        </div>
+        <ul>
+          <li>
+            <p class="text">
+              BE Electrical Engineering | CGPA: <strong>8.84/10</strong>
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div class="name-date-box">
+          <h5 class="sub-heading-1">
+            Dr Kalmadi Shamarao Junior College, India
+          </h5>
+          <h5 class="sub-heading-1">2016 - 2017</h5>
+        </div>
+        <ul>
+          <li>
+            <p class="text">
+              HSC (Class XII), | Aggregate: <strong>78%</strong>
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div class="name-date-box">
+          <h5 class="sub-heading-1">Dr Kalmadi Shamarao High School, India</h5>
+          <h5 class="sub-heading-1">2014 - 2015</h5>
+        </div>
+        <ul>
+          <li>
+            <p class="text">SSC (Class X), | Aggregate: <strong>89%</strong></p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="heading-1">Skills</h3>
+    <hr style="margin: 0px" />
+    <div>
+      <div class="skills-box">
+        <h5 class="sub-heading-1">Proficient:</h5>
+        <p class="text">C | C++ | Java</p>
+      </div>
+      <div class="skills-box">
+        <h5 class="sub-heading-1">Familiar:</h5>
+        <p class="text">Web development | JavaScript</p>
+      </div>
+    </div>
+
+    <h3 class="heading-1">Work Experience</h3>
+    <hr style="margin: 0px" />
+    <div>
+      <div class="name-date-box">
+        <div class="skills-box">
+          <h5 class="sub-heading-1">Tata Consultancy Services Pvt Ltd |</h5>
+          <p class="text">Assitant System Engineer</p>
+        </div>
+        <h5 class="sub-heading-1">2017 - 2021</h5>
+      </div>
+      <ul>
+        <li>
+          <p class="text">
+            Actively addressed the technical issues faced by the Insurance agent
+            and came up with correct solutions.
+          </p>
+        </li>
+        <li>
+          <p class="text">
+            Helped junior engineers in basics of Java and MySQL.
+          </p>
+        </li>
+        <li>
+          <p class="text">
+            Ensured smooth functioning of the website by coordinating with leads
+            and concerned teams.
+          </p>
+        </li>
+      </ul>
+    </div>
+    <h3 class="heading-1">Projects</h3>
+    <hr style="margin: 0px" />
+    <div>
+      <div>
+        <div class="name-date-box">
+          <h5 class="sub-heading-1">Online Examination Portal</h5>
+          <h5 class="sub-heading-1">2017 - 2021</h5>
+        </div>
+        <h5 class="sub-heading-2">
+          A Web app built using MongoDB, Express JS, React and NodeJS where
+          teachers can conduct MCQ exams.
+        </h5>
+        <ul style="margin-top: 4px">
+          <li>
+            <p class="text">
+              The application has separate dashboards for students and teachers
+              and allows CRUD operations depending on the role.
+            </p>
+          </li>
+          <li>
+            <p class="text">
+              An email service is integrated with this application to facilitate
+              forgot password functionality.
+            </p>
+          </li>
+          <li>
+            <p class="text">
+              The teacher can see the number of students who took the exam and
+              also calculate the scores in one click.
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div class="name-date-box">
+          <h5 class="sub-heading-1">Resume Builder</h5>
+          <h5 class="sub-heading-1">2017 - 2021</h5>
+        </div>
+        <h5 class="sub-heading-2">
+          A Web app built using MySQL and Java where students/professionals can
+          create resumes within no time.
+        </h5>
+        <ul style="margin-top: 4px">
+          <li>
+            <p class="text">
+              This backend of the application generates pdf in base64 format
+              using the data provided by the user.
+            </p>
+          </li>
+          <li>
+            <p class="text">
+              The frontend renders and updates the pdf as the user inputs data.
+            </p>
+          </li>
+          <li>
+            <p class="text">
+              New templates can be easily added in the application without any
+              change in the frontend.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <h3 class="heading-1">Academic and Extracurricular Achievements</h3>
+    <hr style="margin: 0px" />
+    <div>
+      <ul style="margin-top: 4px">
+        <li>
+          <p class="text">
+            First Prize in 20 teams in the Online National Project Competition
+            for a machine learning based garbage collecting boat.
+          </p>
+        </li>
+        <li>
+          <p class="text">
+            Top 10 in 100 teams in Walchand Hackathon for an automatic Upper
+            Dipper light for vehicles.
+          </p>
+        </li>
+        <li>
+          <p class="text">
+            Cleared the Japanese Language Proficiency Test (JLPT) N3 Exam.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

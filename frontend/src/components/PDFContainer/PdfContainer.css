@@ -1,0 +1,32 @@
+.pdf-container {
+    width: 50vw;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.showInTabOnly {
+    display: none;
+    text-align: center;
+}
+
+@media only screen and (max-width: 1200px){
+    /*Tablets [601px -> 1200px]*/
+    .main-container {
+        flex-direction: column-reverse;
+        margin: 20px 5px;
+    }
+    .main-form-container {
+        margin-top: 30px;
+    }
+    .pdf-container {
+        width: 98vw;
+        margin-top: 20px;
+    }
+    .showInTabOnly {
+        display: flex;
+    }
+}

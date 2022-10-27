@@ -1,0 +1,53 @@
+*{
+  margin: 0;
+  padding: 0;
+  
+}
+
+.pdf-container{
+  width: 100%;
+  height: 800px;
+  background-color: #e4e4e4;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-msg{
+  width: 100%;
+  color: red;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* width */
+/* ::-webkit-scrollbar {
+  width: 1px;
+} */
+
+::-webkit-scrollbar {
+  width: 2px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  width: 1px;
+  background: #f3f3f3;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  width: 1px;
+  background: rgb(132, 204, 255);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+  width: 1px;
+  background: rgb(171, 247, 255);
+}

@@ -1,0 +1,10 @@
+.boxContainer {
+  max-width: 400px;
+  overflow-x: scroll;
+}
+
+@media only screen and (max-width: 1200px){
+  .boxContainer {
+    max-width: 350px;
+  }
+}

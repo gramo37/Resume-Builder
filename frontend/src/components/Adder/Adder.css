@@ -1,0 +1,50 @@
+.adderContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 7px;
+}
+
+.box {
+  max-width: 380px;
+  display: flex;
+  overflow: scroll;
+}
+
+.boxItem {
+  border: none;
+  margin: 0px 2px;
+  padding: 6px 8px;
+  border-radius: 3px;
+  background-color: rgb(45, 139, 255);
+  color: white;
+  font-weight: 500;
+  word-wrap: break-word;
+  white-space: nowrap;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.boxItem div {
+  margin: 0px 4px;
+}
+
+.boxItemButton {
+  transform: translate(100%, -5px);
+  border-radius: 100%;
+  border: none;
+  position: absolute;
+}
+
+.box input {
+  width: 60px;
+  margin-right: 5px;
+  border-radius: 3px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .box {
+    max-width: 300px;
+  }
+}

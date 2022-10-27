@@ -1,0 +1,131 @@
+.modalContainer {
+    position: fixed;
+    width: 99.9vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(213, 213, 213, 0.723);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.modalBox {
+    box-shadow: 2px 2px 5px #7f7f7f;
+    /* min-width: 50%; */
+    /* height: 80%; */
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    transition: all 0.3s;
+}
+
+.modalBoxClose {
+    transform: translateY(-1000px);
+}
+
+.modalBoxOpen {
+    transform: translateY(0px);
+}
+
+
+.formBox {
+    width: 95%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.formBox  div {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    margin: 5px;
+}
+
+.formBox div span {
+    transform: translate(10px);
+    font-size: 0.9rem;
+    position: absolute;
+    transition: all 0.3s;
+    padding: 0px 10px;
+    border-radius: 5px;
+    /* z-index: 10; */
+}
+.formBox div input {
+    width: 185px;
+    border-radius: 3px;
+    margin: 5px;
+    outline: none;
+    padding: 3px;
+    background: transparent;
+    z-index: 1;
+}
+
+.formBox div input:valid ~span,
+.formBox div input:focus ~span {
+    color: rgb(0, 255, 0);
+    background: green;
+    transform: translateX(20px) translateY(-20px);
+    z-index: 10;
+}
+
+#modalSubmit {
+    padding: 5px 9px;
+    font-weight: 600;
+    background-color: rgb(123, 123, 255);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    transition: all 0.3s;
+}
+
+#modalSubmit:hover {
+    background-color: rgb(94, 94, 173);
+}
+
+.modalDuration {
+    display: flex;
+    flex-direction: column;
+}
+
+#modalCheckbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#modalCheckbox input {
+    cursor: pointer;
+    width: fit-content;
+    margin: 0px;
+    margin-right: 2px;
+}
+
+#modalCheckbox label {
+    margin: 0px;
+    transform: translateY(-2px);
+    margin-left: 2px;
+}
+
+.closeButton {
+    cursor: pointer;
+    width: 5%;
+}
+
+@media only screen and (max-width: 1200px){
+    .modalBox {
+        width: 90%;
+    }
+    .modalRow {
+        flex-direction: column;
+    }
+}

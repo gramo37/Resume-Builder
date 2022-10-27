@@ -1,0 +1,53 @@
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    transition: 0.5s all;
+    margin: 2px;
+}
+
+.upperBox {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aquamarine;
+}
+
+.dataBox {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s all;
+}
+
+.dataBox > div > p {
+    margin: 0px;
+}
+
+.dataBox > div {
+    margin: 5px 15px;
+}
+
+.lowerBox {
+    width: 100%;
+    background-color: aqua;
+    transition: 0.5s all;
+    /* position: absolute; */
+}
+
+.lowerBoxOpen {
+    transform: translate(0, 0);
+    opacity: 1;
+    z-index: 10;
+}
+
+.lowerBoxClose {
+    position: absolute;
+    transform: translate(0, -100px);
+    opacity: 0;
+    z-index: -1;
+}

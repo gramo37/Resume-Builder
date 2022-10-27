@@ -1,0 +1,52 @@
+.basic-info, .skills-info {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 5px;
+    width: 100%;
+}
+
+.basic-info > input, .educationDetails-info > input {
+    padding: 5px 15px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid grey;
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.educationDetails-info {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 5px;
+    width: 100%;
+    min-height: 250px;
+    transition: 0.5s all;
+}
+
+.buttons-controller > button {
+    margin: 0px 15px;
+    padding: 5px 10px;
+    color: white;
+    font-weight: 600;
+    background-color: rgb(185, 185, 255);
+    border-radius: 7px;
+    transition: all 0.5s;
+}
+
+.buttons-controller > button:hover {
+    background-color: rgb(50, 168, 253);
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.AddBtn {
+    cursor: pointer;
+    color: rgb(114, 114, 255);
+    margin: 10px 1px;
+}

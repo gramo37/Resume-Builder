@@ -1,0 +1,62 @@
+import React, { useState, useEffect } from 'react'
+import "./Adder.css"
+import { useSelector } from 'react-redux'
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import CloseIcon from '@mui/icons-material/Close';
+
+const Adder = (props) => {
+    const info = useSelector(state => state.info)
+
+    const [details, setdetails] = useState([])
+    const [newValue, setnewValue] = useState("")
+
+    console.log(props.data)
+
+    useEffect(() => {
+        if (props.data === "") {
+            setdetails([])
+        } else {
+            var array = props.data.split(',');
+            setdetails(array)
+        }
+    }, [info])
+
+
+    const addNewValue = () => {
+        if (newValue !== "") {
+            let temp = details
+            temp.push(newValue)
+            setnewValue("")
+            setdetails(temp)
+            // Send this array to parent
+            props.appendData(temp, props.entityName)
+        }
+    }
+
+    const deleteMe = (index) => {
+        props.deleteData(index, props.entityName)
+    }
+
+    return (
+        <>
+            <div className="adderContainer">
+                <div className="box">
+                    {details.map((item, index) => {
+                        return (
+                            <div className='boxItem'>
+                                <div>{item}</div>
+                                <div onClick={()=>deleteMe(index)}><CloseIcon sx={{ color: "red", width: "15px", height: "15px" }} /></div>
+                            </div>)
+                    })
+                    }
+                    <input placeholder='Enter to proceed' value={newValue} onChange={(e) => { setnewValue(e.target.value) }} />
+                </div>
+                <div className='adderBtn' onClick={addNewValue}>
+                    <AddCircleIcon />
+                </div>
+            </div>
+        </>
+    )
+}
+
+export default Adder
