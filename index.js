@@ -3,13 +3,14 @@ const app = express();
 const dotenv = require("dotenv");
 const path = require("path");
 const connectToDatabase = require("./db");
-dotenv.config({path: path.join(process.cwd(), "config/config.env") })
+dotenv.config();
+// dotenv.config({path: path.join(process.cwd(), "config/config.env") })
 var cookieParser = require('cookie-parser');
 const cors = require("cors");
 const errorHandler = require("./middleware/errors");
 const bodyParser = require('body-parser');
 
-connectToDatabase();
+// connectToDatabase();
 
 app.use(cookieParser());
 app.use(express.json());
@@ -26,9 +27,6 @@ app.use("/api/v1", require('./routes/resumeRoute'))
 
 // Error middleware
 app.use(errorHandler)
-
-// PORT
-const PORT = 5000;
 
 app.listen(process.env.PORT, () => {
    console.log(`Server is running on PORT: ${process.env.PORT}`);
