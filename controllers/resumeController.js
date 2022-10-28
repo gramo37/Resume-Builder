@@ -51,6 +51,8 @@ exports.fetchBase64PDF = catchAsyncError(async (req, res, next) => {
         "extracurriculars": req.body?.extracurriculars ? req.body.extracurriculars : [],
     }
 
+    console.log(pdfTemplate(data))
+
     await pdf.create(pdfTemplate(data), {
         width: `${width}px`,
         height: `${height}px`,
@@ -61,6 +63,7 @@ exports.fetchBase64PDF = catchAsyncError(async (req, res, next) => {
         }
     }).toBuffer(function (err, buffer) {
         try {
+            console.log(buffer, err)
             let data = Buffer.from(buffer).toString('base64');
         if (err) {
             res.status(500).json({
