@@ -6,6 +6,5 @@ const app = express.Router();
 app.route('/create-pdf').post(createPDF);
 app.route('/fetch-pdf').get(fetchPDF);
 app.route('/fetch-base64-pdf').post(fetchBase64PDF);
-app.route('/temp').post(temp);
 
 module.exports = app;
