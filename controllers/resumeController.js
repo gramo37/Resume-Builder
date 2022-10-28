@@ -61,7 +61,12 @@ exports.fetchBase64PDF = catchAsyncError(async (req, res, next) => {
         }
     }).toBuffer(function (err, buffer) {
         let data = Buffer.from(buffer).toString('base64');
-        if (err) res.send(Promise.reject());
+        if (err) {
+            res.status(500).json({
+                err,
+                success: false
+            })
+        }
         // res.send(Promise.resolve());
 
         res.status(200).json({
