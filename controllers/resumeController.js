@@ -101,7 +101,7 @@ exports.temp = catchAsyncErrors(async (req, res, next) => {
     let data = {
         "name": req.body?.name ? req.body.name : "",
         "subTitle": subTitle,
-        "educationalDetail": req.body?.educationalDetail ? req.body.educationalDetail : "",
+        "educationalDetail": req.body?.educationalDetail ? req.body.educationalDetail : [],
         "workExperience": req.body?.workExperience ? req.body.workExperience : [],
         "projects": req.body?.projects ? req.body.projects : [],
         "skills": req.body?.skills ? req.body.skills : {},
