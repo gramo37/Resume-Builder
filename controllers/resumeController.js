@@ -118,22 +118,30 @@ exports.temp = catchAsyncErrors(async (req, res, next) => {
         }
     }).toFile(`${__dirname}/result.pdf`, (err) => {
         if (err) res.send(Promise.reject());
-        // Convert result.pdf to base 64
-        pdf2base64(`${__dirname}/result.pdf`)
-            .then(
-                (response) => {
-                    res.status(200).json({
-                        data: response
-                    })
-                }
-            )
-            .catch(
-                (error) => {
-                    res.status(404).json({
-                        data: "Something went wrong",
-                        error
-                    })
-                }
-            )
+        try {
+            // Convert result.pdf to base 64
+            pdf2base64(`${__dirname}/result.pdf`)
+                .then(
+                    (response) => {
+                        res.status(200).json({
+                            data: response
+                        })
+                    }
+                )
+                .catch(
+                    (error) => {
+                        res.status(404).json({
+                            data: "Something went wrong",
+                            error
+                        })
+                    }
+                )
+        } catch (error) {
+            res.status(404).json({
+                data: "Something went wrong",
+                error
+            })
+        }
+
     })
 })
