@@ -16,18 +16,22 @@ const Adder = (props) => {
         if (props.data === "") {
             setdetails([])
         } else {
-            var array = props.data.split(',');
-            setdetails(array)
+            // var array = props.data.split(',');
+            setdetails(props.data)
         }
     }, [info])
 
 
     const addNewValue = () => {
         if (newValue !== "") {
-            let temp = details
+            let temp = []
+            for (let i = 0; i < details.length; i++) {
+                temp.push(details[i]);
+            }
             temp.push(newValue)
             setnewValue("")
             setdetails(temp)
+            console.log(temp)
             // Send this array to parent
             props.appendData(temp, props.entityName)
         }

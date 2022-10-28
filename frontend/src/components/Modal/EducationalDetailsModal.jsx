@@ -21,7 +21,7 @@ const EducationalDetailsModal = (props) => {
     temp.location = details?.location
     temp.collegename = details?.collegename
     temp.grade = details?.grade
-    temp.duration = details?.fromDate + `${isPresent ? " to present" : details?.toDate}`
+    temp.duration = details?.fromDate + ' - ' + `${isPresent ? "present" : details?.toDate}`
     props.appendData(temp)
     closeModal()
   }
@@ -68,14 +68,14 @@ const EducationalDetailsModal = (props) => {
             <div className="modalRow">
               <div className='modalDuration'>
                 <label>From</label>
-                <input name="fromDate" onChange={onChangeHandler}  type="date" />
+                <input name="fromDate" onChange={onChangeHandler}  type="month" />
                 <div id='modalCheckbox2' style={{opacity: 0}}>
                   <label>Present</label>
                 </div>
               </div>
               <div className='modalDuration'>
                 <label>To</label>
-                <input name="toDate" onChange={onChangeHandler}  type="date" style={{display: `${!isPresent ? "block" : "none"}`}}/>
+                <input name="toDate" onChange={onChangeHandler}  type="month" style={{display: `${!isPresent ? "block" : "none"}`}}/>
                 <div id='modalCheckbox'>
                   <input type="checkbox" onChange={() => setIsPresent(!isPresent)} defaultChecked={isPresent}/>
                   <label>Present</label>

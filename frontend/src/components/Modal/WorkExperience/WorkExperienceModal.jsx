@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import CloseIcon from '@mui/icons-material/Close';
 
 const WorkExperienceModal = (props) => {
@@ -6,23 +6,35 @@ const WorkExperienceModal = (props) => {
     const [showModal, setshowModal] = useState(false)
     const [isPresent, setIsPresent] = useState(false)
     const [details, setDetails] = useState()
+    const [description, setDescription] = useState([])
+    const [changeState, setChangeState] = useState(true)
 
     useEffect(() => {
         setshowModal(true)
     }, [])
+
+    useEffect(() => {
+        // setshowModal(true)
+        console.log("")
+    }, [changeState])
 
     const submitInfo = (e) => {
         e.preventDefault()
         console.log(details, isPresent)
         // Check if all data is filled or not
         let temp = {}
-        let Techstacks = []
-        Techstacks.push(details?.Techstacks)
+        let temp2 = []
+
+        for (let i = 0; i < description.length; i++) {
+            const element = description[i];
+            temp2.push(element.value);
+        }
+
         temp.CompanyName = details?.CompanyName
         temp.designation = details?.designation
         temp.Location = details?.Location
-        temp.Techstacks = Techstacks
-        temp.duration = details?.fromDate + `${isPresent ? " to present" : details?.toDate}`
+        temp.description = temp2
+        temp.duration = details?.fromDate + ' - ' + `${isPresent ? "present" : details?.toDate}`
         props.appendData(temp)
         closeModal()
     }
@@ -36,6 +48,25 @@ const WorkExperienceModal = (props) => {
         setTimeout(function () {
             props.closeModal()
         }, 400);
+    }
+
+    const addInputRow = () => {
+        if (description.length >= 5) return;
+        description.push({
+            id: `job-description-box-${description.length}`,
+            value: ""
+        })
+        setChangeState(!changeState);
+    }
+
+    const descriptionBoxChanged = (id, e) => {
+        for (let i = 0; i < description.length; i++) {
+            const element = description[i];
+            if(element.id == id) {
+                element.value = e.target.value;
+            }
+        }
+        setChangeState(!changeState);
     }
 
     return (
@@ -62,21 +93,25 @@ const WorkExperienceModal = (props) => {
                                 <span>Location</span>
                             </div>
                             <div>
-                                <input name="Techstacks" type="text" onChange={onChangeHandler} />
-                                <span>Tech Stacks</span>
+                                <div className='job-description-box'>
+                                    {description.map((item) => {
+                                        return <input value={item.value} id={item.id} placeholder='Describe your duties in brief' onChange={(e) => descriptionBoxChanged(item.id, e)} />
+                                    })}
+                                    <button className='job-description-button' onClick={addInputRow}>Add Description</button>
+                                </div>
                             </div>
                         </div>
                         <div className="modalRow">
                             <div className='modalDuration'>
                                 <label>From</label>
-                                <input name="fromDate" onChange={onChangeHandler} type="date" />
+                                <input name="fromDate" onChange={onChangeHandler} type="month" />
                                 <div id='modalCheckbox2' style={{ opacity: 0 }}>
                                     <label>Present</label>
                                 </div>
                             </div>
                             <div className='modalDuration'>
                                 <label>To</label>
-                                <input name="toDate" onChange={onChangeHandler} type="date" style={{ display: `${!isPresent ? "block" : "none"}` }} />
+                                <input name="toDate" onChange={onChangeHandler} type="month" style={{ display: `${!isPresent ? "block" : "none"}` }} />
                                 <div id='modalCheckbox'>
                                     <input type="checkbox" onChange={() => setIsPresent(!isPresent)} defaultChecked={isPresent} />
                                     <label>Present</label>

@@ -99,7 +99,7 @@ const AchievementsForm = (props) => {
 
     return (
         <>
-            <Stepper active={5} />
+            <Stepper active={6} changeState={props.changeState}/>
             <form className='form-container'>
                 <div className="skills-info">
                     {/* Send Data to Preload stuff present in local storage*/}

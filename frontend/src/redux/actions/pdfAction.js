@@ -6,68 +6,76 @@ export const pdfAction = (details) => async (dispatch) => {
             type: "RequirePDF"
         })
         console.log(details)
-
-        let currentDetails = {
-            name: "Pushkar Pradeep Gramopadhye",
-            achievements: "aabkjasf",
-            designation: "Assistant System Engineer ",
-            oneLiner: "csdcsdc",
-            other: "asdasd",
-            projects: "Resume Builder",
-            skills: "MERNfjkjkegeg"
-        }
-
+        
         let demo = {
-            "name": "Pushkar",
-            "mobile": "7875594848",
+            "name": "Prasan",
             "email": "gramopadhye37@gmail.com",
-            "github": "github/gramo37",
-            "linkedin": "csdcsdcsdcsd",
-            "personalWebsite": "https://prasanna-gramopadhye.com",
-            "twitter": "https://twitter.com",
-            "education": [{
-                "college_name": "PVG",
-                "duration": "2017-2021",
-                "degree": "BE Electrical",
-                "CGPA": "8.84"
-            },
-            {
-                "college_name": "PVG",
-                "duration": "2017-2021",
-                "degree": "BE Electrical",
-                "CGPA": "8.84"
-            }],
-            "skills": {
-                "proficient": ["C", "C++", "Java", "Python"],
-                "familiar": ["Web Development", "JavaScript"]
-            },
-            "workExperience": [
-                {
-                    "company_name": "TCS",
-                    "duration": "2017-2021",
-                    "designation": "Asst Engineer",
-                    "description": ["abc", "def", "fuck you"]
-                },
-                {
-                    "company_name": "Google",
-                    "duration": "2017-2021",
-                    "designation": "Asst Engineer",
-                    "description": ["abc", "def", "fuck you"]
-                }
+            "address": "Pune",
+            "mobile": "7875594848",
+            "github": "github",
+            "linkedin": "linkedIn",
+            "twitter": "twitter",
+            "personalWebsite": "prasanna",
+            "educationalDetail": [
+              {
+                "degree": "BE",
+                "location": "Pune",
+                "collegename": "PVG",
+                "grade": "8.84",
+                "duration": "2022-09-28 to present"
+              }
             ],
-            "projects": [{
-                "project_Name": "ssdf",
-                "duration": "2019-20",
-                "main_title": "A web app",
-                "description": ["asa", "asas", "asas"]
-            }],
-            "extracurricular": ["as", "as", "asa"]
-        }
+          
+            "workExperience": [
+              {
+                "CompanyName": "TCS",
+                "designation": "Asst",
+                "Location": "Pune",
+                "description": ["C", "C++", "Java"],
+                "duration": "2010-06-10 to present"
+              }
+            ],
+            "projects": [
+              {
+                "projectName": "nnn",
+                "techstacks": "bgf",
+                "briefInfo": "fgbfgb"
+              }
+            ],
+            "skills": [
+              {
+                "programmingLangs": "C,C++",
+                "librariesOrFrameworks": "hello",
+                "toolsOrPlatforms": "hghm",
+                "databases": "mgh"
+              }
+            ],
+            "certificates": [
+              {
+                "certificate": "g"
+              }
+            ],
+            "hobbies": [
+              {
+                "hobby": "gre"
+              }
+            ],
+            "extraCurricular": [
+              {
+                "activity": "erg"
+              }
+            ],
+            "achievements": [
+              {
+                "achievement": "ger"
+              }
+            ]
+          }
+          
 
 
         const link = 'http://localhost:5000/api/v1/fetch-base64-pdf'
-        // const { data } = await axios.post(link, details)
-        const { data } = await axios.post(link, demo)
+        const { data } = await axios.post(link, details)
 
         // const link = 'https://openapis.herokuapp.com/generatePdf'
         // const { data } = await axios.post(link, details)

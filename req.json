@@ -1,0 +1,44 @@
+{
+  "name": "Prasanna",
+  "mobile": "7875594848",
+  "email": "gramopadhye37@gmail.com",
+  "github": "github/gramo37",
+  "linkedin": "",
+  "personalWebsite": "https://prasanna-gramopadhye.com",
+  "twitter": "https://twitter.com",
+
+  "educationalDetail": [
+    {
+      "collegename": "PVG",
+      "duration": "2017-2021",
+      "degree": "BE Electrical",
+      "grade": "8.84",
+      "location": "pune"
+    }
+  ],
+
+  "workExperience": [
+    {
+      "CompanyName": "TCS",
+      "duration": "2017-2021",
+      "designation": "Asst Engineer",
+      "description": ["abc", "def", "fuck you"],
+      "location": "Pune"
+    }
+  ],
+
+  "skills": {
+    "proficient": ["C", "C++", "Java"],
+    "familiar": ["Web Development", "JavaScript"]
+  },
+
+  "projects": [
+    {
+      "project_Name": "ssdf",
+      "duration": "2019-20",
+      "main_title": "A web app",
+      "description": ["asa", "asas", "asas"]
+    }
+  ],
+  "extracurricular": ["as", "as", "asa"]
+}

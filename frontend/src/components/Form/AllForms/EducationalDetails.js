@@ -10,9 +10,20 @@ import EducationalDetailsModal from '../../Modal/EducationalDetailsModal';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 const EducationalDetails = (props) => {
-
     const dispatch = useDispatch()
     const info = useSelector(state => state.info)
+
+    const [showModal, setShowModal] = useState(false)
+
+    const [details, setDetails] = useState({
+        ...info.data,
+        educationalDetail: info.data.educationalDetail ? info.data.educationalDetail : [],
+    })
+
+    const updateForm = async (e) => {
+        setDetails({ ...details, [e.target.name]: e.target.value })
+    }
+
 
     const appendData = async (data) => {
         console.log(data)
@@ -21,10 +32,10 @@ const EducationalDetails = (props) => {
             const item = details.educationalDetail[index];
             temp.push(item)
         }
-        temp.push(data)
+        temp.push(data) // push new data in temp
         // seteducationalDetails(temp)
         // Store these details to localStorage
-        await setDetails({ ...details, educationalDetail: temp })
+        await setDetails({ ...details, educationalDetail: temp }) // change old data with new data
 
     }
 
@@ -38,12 +49,6 @@ const EducationalDetails = (props) => {
         await setDetails({ ...details, educationalDetail: temp })
     }
 
-    const [showModal, setShowModal] = useState(false)
-
-    const [details, setDetails] = useState({
-        ...info.data,
-        educationalDetail: info.data.educationalDetail ? info.data.educationalDetail : [],
-    })
 
     useEffect(async () => {
         await dispatch(storeInfoAction(details))
@@ -63,11 +68,6 @@ const EducationalDetails = (props) => {
         props.nextState()
     }
 
-
-    const updateForm = async (e) => {
-        setDetails({ ...details, [e.target.name]: e.target.value })
-    }
-
     const prevDetails = async (e) => {
         e.preventDefault()
         await dispatch(storeInfoAction(details))
@@ -76,7 +76,7 @@ const EducationalDetails = (props) => {
 
     return (
         <>
-            <Stepper active={1} />
+            <Stepper active={2} changeState={props.changeState}/>
             <form className='form-container' onChange={updateForm}>
                 <div className="educationDetails-info">
                     {/* Show all info here in dropdown fashion */}
@@ -86,7 +86,7 @@ const EducationalDetails = (props) => {
                             upper: [{
                                 displayFormat: "Degree",
                                 displayData: item.degree
-                            },{
+                            }, {
                                 displayFormat: "Grade",
                                 displayData: item.grade
                             }],
@@ -102,9 +102,9 @@ const EducationalDetails = (props) => {
                                 displayFormat: "duration",
                                 displayData: item.duration
                             }
-                        ]
+                            ]
                         }
-                        return <Dropdown key={index} index={index} data={data}  deleteData={deleteData}/>
+                        return <Dropdown key={index} index={index} data={data} deleteData={deleteData} />
                     })}
                 </div>
                 {/* This button will trigger a modal */}

@@ -121,6 +121,24 @@
     width: 5%;
 }
 
+.job-description-button {
+    background-color: green;
+    padding: 2px 10px;
+    color: white;
+    font-weight: 700;
+    transition: all 0.5s;
+}
+
+.job-description-button:hover {
+    background-color: rgb(255, 255, 255);
+    color: green;
+}
+
+.job-description-box {
+    display: flex;
+    flex-direction: column;
+}
+
 @media only screen and (max-width: 1200px){
     .modalBox {
         width: 90%;

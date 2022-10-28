@@ -1,0 +1,46 @@
+{
+  "name": "Prasan",
+  "email": "gramopadhye37@gmail.com",
+  "address": "Pune",
+  "mobile": "7875594848",
+  "github": "github",
+  "linkedin": "linkedIn",
+  "twitter": "twitter",
+  "personalWebsite": "asdasd",
+
+  "educationalDetail": [
+    {
+      "degree": "BE",
+      "location": "Pune",
+      "collegename": "PVG",
+      "grade": "8.84",
+      "duration": "2022-09-28 to present"
+    }
+  ],
+
+  "workExperience": [
+    {
+      "CompanyName": "TCS",
+      "designation": "Asst",
+      "Location": "Pune",
+      "description": ["few", "world", "few"],
+      "duration": "2022-10-13 to present"
+    }
+  ],
+
+  "projects": [
+    {
+      "projectName": "nnn",
+      "maintitle": "sdfsd",
+      "duration": "2022-10-12 to present",
+      "description": ["fdgd"]
+    }
+  ],
+
+  "skills": {
+    "familiar": ["C"],
+    "proficient": ["Java"]
+  },
+  
+  "extracurriculars": ["fsdf", "sdfds", "sdf", "fsdfsdf"]
+}

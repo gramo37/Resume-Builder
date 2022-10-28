@@ -11,10 +11,10 @@ const BasicDetailsForm = (props) => {
   const info = useSelector(state=>state.info)
 
   const [details, setDetails] = useState({
-    fullName:  info?.data?.fullName ? info?.data?.fullName : "",
-    email: info?.data?.addressAndPhone ? info?.data?.addressAndPhone[0] : "",
-    address: info?.data?.addressAndPhone ? info?.data?.addressAndPhone[1] : "",
-    phone: info?.data?.addressAndPhone ? info?.data?.addressAndPhone[2] : "",
+    name:  info?.data?.name ? info?.data?.name : "",
+    email: info?.data?.email ? info?.data?.email : "",
+    address: info?.data?.address ? info?.data?.address : "",
+    mobile: info?.data?.mobile ? info?.data?.mobile : ""
   })
 
   const updateForm = async (e) => {
@@ -26,12 +26,10 @@ const BasicDetailsForm = (props) => {
     console.log(details)
     // edit details and then send it
     let temp = {...info.data}
-    temp.fullName = details.fullName
-    let addressAndPhone = []
-    addressAndPhone.push(details.email)
-    addressAndPhone.push(details.address)
-    addressAndPhone.push(details.phone)
-    temp.addressAndPhone = addressAndPhone
+    temp.name = details.name
+    temp.email = details.email
+    temp.address = details.address
+    temp.mobile = details.mobile
 
     // setDetails({...details, fullName: temp.fullName, addressAndPhone: addressAndPhone})
 
@@ -49,14 +47,14 @@ const BasicDetailsForm = (props) => {
 
   return (
     <>
-      <MyStepper active={0} />
+      <MyStepper active={0} changeState={props.changeState}/>
 
       <form className='form-container' onChange={updateForm}>
         <div className="basic-info">
-          <input type="text" name='fullName' value={details.fullName} placeholder='Name' />
+          <input type="text" name='name' value={details.name} placeholder='Name' />
           <input type="text" name='email' value={details.email} placeholder='Email'/>
           <input type="text" name='address' value={details.address} placeholder='Address'/>
-          <input type="number" name='phone' value={details.phone} placeholder='Phone'/>
+          <input type="number" name='mobile' value={details.mobile} placeholder='Phone'/>
         </div>
         <div className='buttons-controller'>
           <button disabled onClick={prevDetails}>PREV</button>

@@ -1,15 +1,11 @@
 module.exports = ({
   name,
-  mobile,
-  email,
-  github,
-  linkedin,
-  personalWebsite,
-  education,
+  subTitle,
+  educationalDetail,
   skills,
   workExperience,
   projects,
-  extracurricular,
+  extracurriculars,
 }) => {
   return `
     <!DOCTYPE html>
@@ -101,25 +97,24 @@ module.exports = ({
   <body>
     <h1 class="name">${name}</h1>
     <h4 class="personal-details">
-      ${email + " |"} +91-${mobile + " |"} ${github + " |"}
-      ${personalWebsite + " |"} ${linkedin}
+      ${subTitle}
     </h4>
     <h3 class="heading-1">Education</h3>
     <hr style="margin: 0px" />
     <div class="educational-details">
-    ${education
+    ${educationalDetail
       .map((item) => {
         return `<div>
         <div class="name-date-box">
           <h5 class="sub-heading-1">
-            ${item.college_name}
+            ${item.collegename}
           </h5>
           <h5 class="sub-heading-1">${item.duration}</h5>
         </div>
         <ul>
           <li>
             <p class="text">
-              ${item.degree} | CGPA: <strong>${item.CGPA}/10</strong>
+              ${item.degree} | CGPA: <strong>${item.grade}/10</strong>
             </p>
           </li>
         </ul>
@@ -133,8 +128,8 @@ module.exports = ({
       <div class="skills-box">
         <h5 class="sub-heading-1">Proficient:</h5>
         <p class="text">
-          ${skills.proficient
-            .map((item) => {
+          ${skills?.proficient
+            ?.map((item) => {
               return `${item}`;
             })
             .join(" | ")}
@@ -143,8 +138,8 @@ module.exports = ({
       <div class="skills-box">
         <h5 class="sub-heading-1">Familiar:</h5>
         <p class="text">
-        ${skills.familiar
-          .map((item) => {
+        ${skills?.familiar
+          ?.map((item) => {
             return `${item}`;
           })
           .join(" | ")}
@@ -159,7 +154,7 @@ module.exports = ({
         return `<div>
       <div class="name-date-box">
         <div class="skills-box">
-          <h5 class="sub-heading-1">${item.company_name} |</h5>
+          <h5 class="sub-heading-1">${item.CompanyName} |</h5>
           <p class="text">${item.designation}</p>
         </div>
         <h5 class="sub-heading-1">${item.duration}</h5>
@@ -188,11 +183,11 @@ module.exports = ({
         return `
       <div style="margin-top: 15px">
         <div class="name-date-box">
-          <h5 class="sub-heading-1">${item.project_Name}</h5>
+          <h5 class="sub-heading-1">${item.projectName}</h5>
           <h5 class="sub-heading-1">${item.duration}</h5>
         </div>
         <h5 class="sub-heading-2">
-          ${item.main_title}
+          ${item.maintitle}
         </h5>
         <ul style="margin-top: 4px">
         ${item.description
@@ -215,7 +210,7 @@ module.exports = ({
     <hr style="margin: 0px" />
     <div>
       <ul style="margin-top: 4px">
-      ${extracurricular
+      ${extracurriculars
         .map((item) => {
           return `<li>
       <p class="text">

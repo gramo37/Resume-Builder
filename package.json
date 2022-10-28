@@ -10,7 +10,8 @@
     "pdf-to-base64": "^1.0.3"
   },
   "scripts": {
-    "start": "nodemon index.js",
-    "test": "concurrently \"nodemon index.js\" \"cd frontend && npm run start\""
+    "dev": "nodemon index.js",
+    "test": "concurrently \"nodemon index.js\" \"cd frontend && npm run start\"",
+    "start":"node index.js"
   }
 }

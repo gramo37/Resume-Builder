@@ -76,7 +76,7 @@ const Projects = (props) => {
 
     return (
         <>
-            <MyStepper active={3} />
+            <MyStepper active={4} changeState={props.changeState}/>
             <form className='form-container' onChange={updateForm}>
                 <div className="educationDetails-info">
                     {/* Show all info here in dropdown fashion */}

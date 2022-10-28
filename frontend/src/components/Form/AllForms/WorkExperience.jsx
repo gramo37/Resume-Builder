@@ -23,6 +23,12 @@ const WorkExperience = (props) => {
         e.preventDefault()
         setShowModal(!showModal)
     }
+    
+    useEffect(async () => {
+        await dispatch(storeInfoAction(details))
+        console.log(details)
+        await dispatch(pdfAction(details))
+    }, [details])
 
     const nextDetails = async (e) => {
         e.preventDefault()
@@ -31,12 +37,6 @@ const WorkExperience = (props) => {
         await dispatch(pdfAction(details))
         props.nextState()
     }
-
-    useEffect(async () => {
-        await dispatch(storeInfoAction(details))
-        console.log(details)
-        await dispatch(pdfAction(details))
-    }, [details])
 
     const updateForm = async (e) => {
         setDetails({ ...details, [e.target.name]: e.target.value })
@@ -73,7 +73,7 @@ const WorkExperience = (props) => {
 
     return (
         <>
-            <MyStepper active={2} />
+            <MyStepper active={3} changeState={props.changeState} />
             <form className='form-container' onChange={updateForm}>
                 <div className="educationDetails-info">
                     {/* Show all info here in dropdown fashion */}
@@ -92,8 +92,8 @@ const WorkExperience = (props) => {
                                     displayData: item.Location
                                 },
                                 {
-                                    displayFormat: "Tech Stacks",
-                                    displayData: item.Techstacks
+                                    displayFormat: "Description",
+                                    displayData: item.Description
                                 },
                                 {
                                     displayFormat: "Duration",
