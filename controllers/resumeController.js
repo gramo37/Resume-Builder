@@ -60,7 +60,8 @@ exports.fetchBase64PDF = catchAsyncError(async (req, res, next) => {
             height
         }
     }).toBuffer(function (err, buffer) {
-        let data = Buffer.from(buffer).toString('base64');
+        try {
+            let data = Buffer.from(buffer).toString('base64');
         if (err) {
             res.status(500).json({
                 err,
@@ -73,6 +74,12 @@ exports.fetchBase64PDF = catchAsyncError(async (req, res, next) => {
             success: "true",
             data
         })
+        } catch (error) {
+            res.status(400).json({
+                error,
+                success: false
+            })
+        }
     })
 });
 
