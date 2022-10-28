@@ -2,8 +2,8 @@ const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
 const path = require("path");
-// dotenv.config();
-dotenv.config({path: path.join(process.cwd(), "config/config.env") })
+dotenv.config();
+// dotenv.config({path: path.join(process.cwd(), "config/config.env") })
 var cookieParser = require('cookie-parser');
 const cors = require("cors");
 const errorHandler = require("./middleware/errors");
