@@ -75,6 +75,7 @@ exports.fetchBase64PDF = catchAsyncError(async (req, res, next) => {
             data
         })
         } catch (error) {
+            console.log(error)
             res.status(400).json({
                 error,
                 success: false
