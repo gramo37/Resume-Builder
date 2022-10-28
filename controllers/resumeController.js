@@ -51,8 +51,6 @@ exports.fetchBase64PDF = catchAsyncError(async (req, res, next) => {
         "extracurriculars": req.body?.extracurriculars ? req.body.extracurriculars : [],
     }
 
-    console.log(pdfTemplate(data))
-
     await pdf.create(pdfTemplate(data), {
         width: `${width}px`,
         height: `${height}px`,
@@ -61,35 +59,36 @@ exports.fetchBase64PDF = catchAsyncError(async (req, res, next) => {
             width,
             height
         }
-    }).toBuffer(function (err, buffer) {
-        try {
-            console.log(buffer, err)
-            let data = Buffer.from(buffer).toString('base64');
-        if (err) {
-            res.status(500).json({
-                err,
-                success: false
-            })
-        }
-        // res.send(Promise.resolve());
-
-        res.status(200).json({
-            success: "true",
-            data
-        })
-        } catch (error) {
-            console.log(error)
-            res.status(400).json({
-                error,
-                success: false
-            })
-        }
     })
+        .toBuffer(function (err, buffer) {
+            try {
+                console.log("testing", buffer)
+                let data = Buffer.from(buffer).toString('base64');
+                if (err) {
+                    res.status(500).json({
+                        err,
+                        success: false
+                    })
+                }
+                // res.send(Promise.resolve());
+
+                res.status(200).json({
+                    success: "true",
+                    data
+                })
+            } catch (error) {
+                console.log(error)
+                res.status(400).json({
+                    error,
+                    success: false
+                })
+            }
+        })
 });
 
 // exports.temp = catchAsyncErrors(async (req, res, next) => {
 //     // Address is a new field that can be added
-//     let subTitle = `${req.body?.email ? req.body.email + " | " : ""} 
+//     let subTitle = `${req.body?.email ? req.body.email + " | " : ""}
 //     ${req.body?.mobile ? req.body.mobile + " | " : ""}
 //     ${req.body?.github ? `<a href=${req.body?.github} target="_blank">Github</a>` + " | " : ""}
 //     ${req.body?.twitter ? `<a href=${req.body?.twitter} target="_blank">Twitter</a>` + " | " : ""}
