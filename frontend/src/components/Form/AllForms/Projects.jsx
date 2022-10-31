@@ -47,7 +47,7 @@ const Projects = (props) => {
 
     useEffect(async () => {
         await dispatch(storeInfoAction(details))
-        await dispatch(pdfAction(details))
+        // await dispatch(pdfAction(details))
     }, [details])
 
     const showModalFunc = (e) => {

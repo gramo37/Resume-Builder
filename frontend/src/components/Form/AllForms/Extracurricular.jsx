@@ -54,7 +54,7 @@ const Extracurricular = (props) => {
     e.preventDefault()
     await dispatch(storeInfoAction(details))
     console.log(details)
-    await dispatch(pdfAction(details))
+    // await dispatch(pdfAction(details))
     setChangeState(!changeState);
     
     // props.nextState()

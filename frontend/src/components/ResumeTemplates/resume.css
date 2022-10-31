@@ -1,0 +1,81 @@
+*, *::before, *::after {
+  box-sizing: content-box;
+}
+
+.template-holder {
+  width: 595px;
+  height: 840px;
+  padding: 29px 17px;
+  /* border: 1px solid grey; */
+}
+
+.name {
+  text-align: center;
+  margin: 0px;
+  padding: 0%;
+  color: rgb(31 56 100);
+}
+
+.personal-details {
+  text-align: center;
+  margin: 0px;
+  padding: 0%;
+  font-weight: 200;
+  font-style: italic;
+  font-size: 0.5rem;
+}
+
+.heading-1 {
+  color: #2e75b5;
+  margin: 8px 5px;
+  margin-bottom: 2px;
+  padding: 0%;
+  font-size: 0.9rem;
+}
+
+.name-date-box {
+  display: flex;
+  justify-content: space-between;
+  /* margin: 5px 0px; */
+  padding: 0%;
+  display: -webkit-flex;
+  -webkit-justify-content: space-between;
+  /* -webkit-align-items: center; */
+}
+
+.sub-heading-1 {
+  margin: 0px 3px;
+  padding: 0%;
+  font-weight: 700;
+  font-size: 0.65rem;
+}
+
+.sub-heading-2 {
+  margin: 0px 3px;
+  padding: 0%;
+  font-weight: 400;
+  font-size: 0.55rem;
+  font-style: italic;
+}
+
+.text {
+  font-size: 0.6rem;
+  margin: 0px;
+  padding: 0%;
+}
+
+.skills-box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+ul {
+  padding: 0px;
+  padding-left: 19px;
+  margin: 0px;
+}
+
+.educational-details ul {
+  margin: 0px;
+}

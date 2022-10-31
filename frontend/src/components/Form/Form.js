@@ -1,5 +1,4 @@
-import React, {useState} from 'react'
-import AchievementsForm from './AllForms/AchievementsForm'
+import React, { useState } from 'react'
 import BasicDetailsForm from './AllForms/BasicDetailsForm'
 import EducationalDetails from './AllForms/EducationalDetails'
 import Extracurricular from './AllForms/Extracurricular'
@@ -12,11 +11,11 @@ const Form = (props) => {
 
     const [currentState, setCurrentState] = useState(0)
     const prevState = () => {
-        setCurrentState(currentState-1)
+        setCurrentState(currentState - 1)
     }
 
     const nextState = () => {
-        setCurrentState(currentState+1)
+        setCurrentState(currentState + 1)
     }
 
     const changeState = (state) => {
@@ -25,15 +24,18 @@ const Form = (props) => {
 
     return (
         <>
-        
-        {currentState == 0 && <BasicDetailsForm prevState = {prevState} nextState = {nextState} changeState={changeState} />}
-        {currentState == 1 && <PersonalLinksForm prevState = {prevState} nextState = {nextState} changeState={changeState} />}
-        {currentState == 2 && <EducationalDetails prevState = {prevState} nextState = {nextState} changeState={changeState} />}
-        {currentState == 3 && <WorkExperience prevState = {prevState} nextState = {nextState} changeState={changeState} />}
-        {currentState == 4 && <Projects prevState = {prevState} nextState = {nextState} changeState={changeState} />}
-        {currentState == 5 && <Skills prevState = {prevState} nextState = {nextState} changeState={changeState} />}
-        {/* {currentState == 6 && <AchievementsForm prevState = {prevState} nextState = {nextState} changeState={changeState} />} */}
-        {currentState == 6 && <Extracurricular prevState = {prevState} nextState = {nextState} changeState={changeState} />}
+            {currentState == 0 && <BasicDetailsForm prevState={prevState} nextState={nextState} changeState={changeState} />}
+            {currentState == 1 && <PersonalLinksForm prevState={prevState} nextState={nextState} changeState={changeState} />}
+            {currentState == 2 && <EducationalDetails prevState={prevState} nextState={nextState} changeState={changeState} />}
+            {currentState == 3 && <WorkExperience prevState={prevState} nextState={nextState} changeState={changeState} />}
+            {currentState == 4 && <Projects prevState={prevState} nextState={nextState} changeState={changeState} />}
+            {currentState == 5 && <Skills prevState={prevState} nextState={nextState} changeState={changeState} />}
+            {/* {currentState == 6 && <AchievementsForm prevState = {prevState} nextState = {nextState} changeState={changeState} />} */}
+            {currentState == 6 && <Extracurricular prevState={prevState} nextState={nextState} changeState={changeState} />}
+            <div className='generate-pdf-container-button'>
+                <button className='generate-pdf-button' onClick={props.generatePDF}>Generate PDF</button>
+                <button className='generate-pdf-button' onClick={props.generateWord}>Generate Word</button>
+            </div>
         </>
     )
 }

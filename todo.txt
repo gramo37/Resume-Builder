@@ -1,0 +1,4 @@
+Links adding
+Margin adding for next page
+Special characters not displaying well
+Make some fields compulsory like Name, Email, workExperience before downloading

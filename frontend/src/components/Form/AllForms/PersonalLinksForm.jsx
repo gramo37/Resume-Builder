@@ -32,7 +32,7 @@ const PersonalLinksForm = (props) => {
         console.log(temp)
         await dispatch(storeInfoAction(temp))
         // Display it on the pdf container
-        await dispatch(pdfAction(temp))
+        // await dispatch(pdfAction(temp))
         props.nextState()
     }
 

@@ -55,7 +55,7 @@ const Skills = (props) => {
     e.preventDefault()
     await dispatch(storeInfoAction({ ...info.data }))
     // console.log(details)
-    await dispatch(pdfAction({ ...info.data }))
+    // await dispatch(pdfAction({ ...info.data }))
     props.nextState()
   }
 
