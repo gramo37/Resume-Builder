@@ -24,6 +24,10 @@ app.use(express.static("public"));
 // Routes
 app.use("/api/v1", require('./routes/resumeRoute'))
 
+app.get('*', function(req, res){
+   res.status(404).sendFile(path.join(__dirname, 'public/error.html'));
+ });
+
 // Error middleware
 app.use(errorHandler)
 

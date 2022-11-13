@@ -12,6 +12,7 @@
   "scripts": {
     "dev": "nodemon index.js",
     "test": "concurrently \"nodemon index.js\" \"cd frontend && npm run start\"",
-    "start":"node index.js"
+    "start":"node index.js",
+    "build": "cd frontend && npm run build && cd.."
   }
 }
