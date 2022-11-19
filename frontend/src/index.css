@@ -26,19 +26,19 @@
 } */
 
 ::-webkit-scrollbar {
-  width: 2px;
+  width: 20px;
   height: 8px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  width: 1px;
+  width: 10px;
   background: #f3f3f3;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  width: 1px;
+  width: 10px;
   background: rgb(132, 204, 255);
   border-radius: 10px;
   cursor: pointer;
@@ -47,6 +47,6 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   cursor: pointer;
-  width: 1px;
+  width: 10px;
   background: rgb(171, 247, 255);
 }

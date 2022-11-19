@@ -7,6 +7,7 @@ import {
   Route,
   Routes
 } from "react-router-dom"
+import DashBoard from './components/DashBoard/DashBoard';
 
 export const App = () => {
 
@@ -14,7 +15,8 @@ export const App = () => {
     <>
       <Router>
         <Routes>
-          <Route exact path="/" element={<PdfContainer />} />
+          <Route exact path="/" element={<DashBoard />} />
+          <Route exact path="/create-resume" element={<PdfContainer />} />
           <Route path="*" element={<Error404 />} />
           </Routes>
       </Router>

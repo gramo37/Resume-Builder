@@ -1,0 +1,229 @@
+:root {
+  --primary-color: #ff9823;
+  --secondary-color: #ffffff;
+  --background-color: rgb(236, 236, 236);
+  --text-color: rgb(60, 60, 60);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@1,500&family=IBM+Plex+Sans:wght@600&display=swap");
+
+.dashboard-main {
+  position: relative;
+  scroll-snap-type: y mandatory;
+  overflow: auto;
+  height: 100vh;
+}
+
+.dashboard-main,
+.dashboard,
+body {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+}
+
+.dashboard-main::-webkit-scrollbar,
+.dashboard::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.dashboard-header {
+  opacity: 1;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: 10;
+  scroll-snap-align: center;
+}
+
+.dashboard-overlay {
+  background: var(--background-color);
+  opacity: 0.8;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.dashboard-header-container {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 100;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.dashboard-header-image {
+  margin: 15px 0px;
+}
+
+.dashboard-header-image img {
+  transition: all 0.5s;
+  filter: invert(1);
+  width: 100%;
+  height: 100%;
+}
+
+.loginToProject {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginToProject a {
+  margin: 20px 0px;
+  padding: 10px 20px;
+  background-color: #000;
+  color: white;
+  transition: transform 0.5s;
+}
+
+.loginToProject a:hover {
+  transform: scale(1.1);
+}
+
+.dashboard-header-content {
+  transition: all 0.5s;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 19px;
+  padding: 0px 10px;
+}
+
+.dashboard-header-content h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.dashboard-header-content p {
+  font-size: 1.25rem;
+  font-style: italic;
+  font-family: "Brygada 1918", serif;
+}
+
+.dashboard-header-content h1,
+.dashboard-header-content p {
+  text-align: center;
+}
+
+.dashboard-page {
+  height: 100vh;
+  padding: 20px 0px;
+}
+
+.dashboard-page:nth-child(2n) {
+  background: var(--secondary-color);
+}
+
+.dashboard-page:nth-child(2n + 1) {
+  background: var(--primary-color);
+}
+
+footer {
+  position: relative;
+  height: 50px;
+  background: #000;
+  color: white;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  scroll-snap-align: center;
+}
+
+footer a {
+  color: white;
+}
+
+.dashboard-demo-video {
+  height: 100vh;
+  background: var(--background-color);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  opacity: 0.6;
+  padding: 20px 0px;
+  z-index: 100;
+  scroll-snap-align: center;
+}
+
+.dashboard-demo-video h1 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.dashboard-demo-video video {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  z-index: 100;
+}
+
+.showHeaderContent {
+  transform: translate(0%);
+}
+
+.hideHeaderImg {
+  transform: translate(-120%);
+}
+
+.hideHeaderContent {
+  transform: translate(120%);
+}
+
+@media only screen and (max-width: 860px) {
+  .dashboard-header-container {
+    flex-direction: column !important;
+  }
+
+  .dashboard-header-image {
+    transform: translateX(20px);
+    width: 300px;
+    height: 300px;
+  }
+
+  .dashboard-header-content h1 {
+    font-size: 2rem;
+  }
+
+  .dashboard-header-content p {
+    font-size: 1rem;
+  }
+
+  .dashboard-header {
+    height: fit-content;
+    padding: 15px 0px;
+  }
+  footer {
+    flex-direction: column;
+    height: fit-content;
+    padding: 10px 0px;
+  }
+  .footer-horizontal-bar {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .dashboard-header-image {
+    width: 190px;
+    height: 190px;
+  }
+}
