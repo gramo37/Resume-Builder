@@ -208,7 +208,7 @@ footer a {
   }
 
   .dashboard-header {
-    height: fit-content;
+    /* height: fit-content; */
     padding: 15px 0px;
   }
   footer {
