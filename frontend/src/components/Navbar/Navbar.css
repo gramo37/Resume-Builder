@@ -1,0 +1,132 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar{
+    padding: 0px 10px;
+    background-color: rgb(71, 71, 71);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 49px;
+
+}
+
+.logo{
+    text-decoration: none;
+    width: 200px;
+    text-align: center;
+    font-size: 22px;
+    color: whitesmoke;
+    font-family: 'Zen Tokyo Zoo', cursive;
+}
+
+.components-container{
+    padding-left: 25px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.left-component{
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: flex-start;
+    width: 40%;
+}
+
+.left-component li{
+    padding: 10px 15px;
+}
+
+.left-component li a{
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    font-family: 'Roboto Slab', serif;
+}
+
+.dropdown{
+    background-color: rgb(165, 165, 165);
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    list-style: none;
+    top: 49px;
+    transform: translate(-20px, 0px);
+}
+
+.dropdown li{
+    padding: 5px 25px;
+    /* margin: 0px 5vw; */
+}
+
+.dropdown li a{
+    color: cornsilk;
+}
+
+.search-form{
+    /* border: 2px solid red; */
+    width: 233px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-bar{
+    border-radius: 4px;
+    width: 164px;
+    height: 29px;
+    padding-left: 10px;
+}
+
+.search-button{
+    transition: ease-in 0.3s;
+    padding: 1px 10px;
+    border: 1px solid blue;
+    background-color: rgb(41, 212, 255);
+    border-radius: 4px;
+    height: 29px;
+}
+
+
+
+
+
+/* Hamburger Icon */
+
+#hamburger-icon{
+    display: none;
+}
+
+.hamburger-icon-container {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }

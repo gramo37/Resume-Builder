@@ -1,0 +1,109 @@
+.template-card-container {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 7px;
+  padding: 8px;
+}
+
+a:hover {
+  text-decoration: none !important;
+  color: black !important;
+}
+
+.template-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-width: 100px;
+  text-decoration: none;
+  color: black;
+}
+
+.template-card :hover {
+  text-decoration: none !important;
+  color: black !important;
+}
+
+.template-card > div > img {
+  height: 300px;
+  object-fit: contain;
+}
+
+.template-card > span,
+.template-card > span:hover {
+  font-size: 1.75rem;
+  font-family: "Times New Roman", Times, serif;
+  text-transform: uppercase;
+}
+
+.pdf-container {
+  width: fit-content;
+  /* height: 942px; */
+  border: 1px solid grey;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.main-container h2 {
+  margin: "15px 0px";
+  text-align: center;
+}
+
+.sub-main-container {
+  width: 97%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.showInTabOnly {
+  display: none;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
+  /*Tablets [601px -> 1200px]*/
+  .sub-main-container {
+    flex-direction: column-reverse;
+    margin: 20px 5px;
+  }
+  .main-container {
+    /* flex-direction: column-reverse; */
+    margin: 20px 5px;
+  }
+  .main-container h2 {
+    font-size: 1.7rem;
+  }
+  .main-form-container {
+    margin-top: 30px;
+  }
+  .pdf-container {
+    width: 98vw;
+    margin-top: 20px;
+  }
+  .showInTabOnly {
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 1800px) {
+  .template-card-container {
+    grid-template-columns: repeat(4, auto);
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .template-card-container {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+@media only screen and (max-width: 725px) {
+  .template-card-container {
+    grid-template-columns: repeat(1, auto);
+  }
+}
