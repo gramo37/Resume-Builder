@@ -20,19 +20,14 @@
   font-weight: 600;
 }
 
-/* width */
-/* ::-webkit-scrollbar {
-  width: 1px;
-} */
-
 ::-webkit-scrollbar {
-  width: 20px;
+  width: 2px;
   height: 8px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  width: 10px;
+  width: 2px;
   background: #f3f3f3;
 }
 

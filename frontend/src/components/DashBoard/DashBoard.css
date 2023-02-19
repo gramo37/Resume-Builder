@@ -9,7 +9,7 @@
 
 .dashboard-main {
   position: relative;
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y mandatory; */
   overflow: auto;
   height: 100vh;
 }
@@ -90,6 +90,8 @@ body::-webkit-scrollbar {
 }
 
 .loginToProject a:hover {
+  background-color: #FFF;
+  border: 2px solid black;
   color: white;
   text-decoration: none;
   transform: scale(1.1);

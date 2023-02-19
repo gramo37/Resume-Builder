@@ -13,7 +13,8 @@ const Template = () => {
   const dispatch = useDispatch()
   const info = useSelector(state => state.info)
   const pdf = useSelector(state => state.pdf)
-  let { resumeType } = useParams();
+  // let { resumeType } = useParams();
+  const resumeType = "normal"
 
   const generatePDF = () => {
     let doc = new jsPDF("p", "pt", "a4");

@@ -55,7 +55,7 @@ const DashBoardInfo = ({ bgImage, title, desc, image, align }) => {
             return (<p>{item}</p>)
           })}
           <div className="loginToProject">
-            <Link to="/templates"> Check Out Now !</Link>
+            <Link to="/template"> Check Out Now !</Link>
           </div>
         </div>
       </div>
